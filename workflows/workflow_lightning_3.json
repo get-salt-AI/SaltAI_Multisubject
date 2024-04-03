@@ -1,0 +1,1553 @@
+{
+  "last_node_id": 1165,
+  "last_link_id": 2730,
+  "nodes": [
+    {
+      "id": 1150,
+      "type": "LoadImage",
+      "pos": [
+        -660,
+        2890
+      ],
+      "size": {
+        "0": 315,
+        "1": 314.0000305175781
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            2669,
+            2676
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "woman.png",
+        "image"
+      ]
+    },
+    {
+      "id": 1057,
+      "type": "PhotoMakerLoader",
+      "pos": [
+        -658,
+        3286
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "PHOTOMAKER",
+          "type": "PHOTOMAKER",
+          "links": [
+            2451,
+            2561,
+            2677
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PhotoMakerLoader"
+      },
+      "widgets_values": [
+        "photomaker-v1.bin"
+      ]
+    },
+    {
+      "id": 1059,
+      "type": "LoadImage",
+      "pos": [
+        -667,
+        2137
+      ],
+      "size": {
+        "0": 315,
+        "1": 314.0000305175781
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            2452,
+            2635
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "2023-07-24 13.44.35.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 1108,
+      "type": "LoadImage",
+      "pos": [
+        -660,
+        2520
+      ],
+      "size": {
+        "0": 315,
+        "1": 314.0000305175781
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            2559,
+            2636
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "TechCrunch_Disrupt_2019_(48834434641)_(cropped).jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 1114,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -1330,
+        2420
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2680
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            2586
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "by william eggleston, A fashion editorial photo of three person as a chic Christmas elf standing at the gas station in the middle of a deserted mid-west town, (full body photo), wearing an elf costume, playful hairstyle, full body, detailed"
+      ]
+    },
+    {
+      "id": 1072,
+      "type": "CR LoRA Stack",
+      "pos": [
+        -1710,
+        1660
+      ],
+      "size": {
+        "0": 610,
+        "1": 342
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "lora_stack",
+          "type": "LORA_STACK",
+          "link": null,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LORA_STACK",
+          "type": "LORA_STACK",
+          "links": [
+            2483
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CR LoRA Stack"
+      },
+      "widgets_values": [
+        "On",
+        "photomaker-v1-lora_weights.pth",
+        1,
+        1,
+        "Off",
+        "None",
+        0.3,
+        0.3,
+        "Off",
+        "None",
+        0.3,
+        0.3
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 1071,
+      "type": "CR Apply LoRA Stack",
+      "pos": [
+        -1230,
+        1510
+      ],
+      "size": {
+        "0": 210,
+        "1": 66
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 2490
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2489
+        },
+        {
+          "name": "lora_stack",
+          "type": "LORA_STACK",
+          "link": 2483
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            2715
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CR Apply LoRA Stack"
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 1058,
+      "type": "PhotoMakerEncode",
+      "pos": [
+        -326.62442105343,
+        2168.2373042892746
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "photomaker",
+          "type": "PHOTOMAKER",
+          "link": 2451
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2452
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2670
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            2717
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PhotoMakerEncode"
+      },
+      "widgets_values": [
+        "by william eggleston, A fashion editorial photo of man photomaker as a chic Christmas elf standing at the gas station in the middle of a deserted mid-west town, (full body photo), wearing an elf costume, playful hairstyle, full body, detailed"
+      ]
+    },
+    {
+      "id": 1109,
+      "type": "PhotoMakerEncode",
+      "pos": [
+        -300,
+        2520
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "photomaker",
+          "type": "PHOTOMAKER",
+          "link": 2561
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2559
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2672
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            2720
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PhotoMakerEncode"
+      },
+      "widgets_values": [
+        "by william eggleston, A fashion editorial photo of man photomaker as a chic Christmas elf standing at the gas station in the middle of a deserted mid-west town, (full body photo), wearing an elf costume, playful hairstyle, full body, detailed"
+      ]
+    },
+    {
+      "id": 1129,
+      "type": "PreviewImage",
+      "pos": [
+        155,
+        1199
+      ],
+      "size": {
+        "0": 401.3443298339844,
+        "1": 419.2975158691406
+      },
+      "flags": {
+        "pinned": false
+      },
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 2615
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 1130,
+      "type": "PreviewImage",
+      "pos": [
+        631,
+        1202
+      ],
+      "size": {
+        "0": 401.3443298339844,
+        "1": 419.2975158691406
+      },
+      "flags": {
+        "pinned": false
+      },
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 2728
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 1113,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -1340,
+        2150
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2679
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            2585,
+            2718,
+            2721,
+            2722
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "nsfw"
+      ]
+    },
+    {
+      "id": 1066,
+      "type": "ControlNetApplyAdvanced",
+      "pos": [
+        647,
+        1827
+      ],
+      "size": {
+        "0": 315,
+        "1": 166
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 2586
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 2585
+        },
+        {
+          "name": "control_net",
+          "type": "CONTROL_NET",
+          "link": 2461
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2598
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            2584
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            2587
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetApplyAdvanced"
+      },
+      "widgets_values": [
+        1,
+        0,
+        0.999
+      ]
+    },
+    {
+      "id": 1065,
+      "type": "ControlNetLoader",
+      "pos": [
+        261,
+        1983
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "CONTROL_NET",
+          "type": "CONTROL_NET",
+          "links": [
+            2461
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetLoader"
+      },
+      "widgets_values": [
+        "controlnet-openpose-sdxl-1.0/OpenPoseXL2.safetensors"
+      ]
+    },
+    {
+      "id": 1151,
+      "type": "PhotoMakerEncode",
+      "pos": [
+        -300,
+        2890
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "photomaker",
+          "type": "PHOTOMAKER",
+          "link": 2677
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2669
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2673
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            2723
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PhotoMakerEncode"
+      },
+      "widgets_values": [
+        "by william eggleston, A fashion editorial photo of woman photomaker as a chic Christmas elf standing at the gas station in the middle of a deserted mid-west town, (full body photo), wearing an elf costume, playful hairstyle, full body, detailed"
+      ]
+    },
+    {
+      "id": 1147,
+      "type": "PreviewImage",
+      "pos": [
+        1770,
+        2180
+      ],
+      "size": {
+        "0": 663.3731689453125,
+        "1": 652.9630737304688
+      },
+      "flags": {
+        "pinned": false
+      },
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 2654
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 1062,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        -1738.9305189277857,
+        1510.995982463133
+      ],
+      "size": {
+        "0": 410,
+        "1": 100
+      },
+      "flags": {
+        "pinned": false
+      },
+      "order": 6,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            2490
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            2489,
+            2670,
+            2672,
+            2673,
+            2679,
+            2680
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            2458
+          ],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "title": "SDXL Checkpoint",
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "dreamshaperXL_lightning.safetensors"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 1137,
+      "type": "MultisubjectFaceSwapNode",
+      "pos": [
+        1380,
+        2180
+      ],
+      "size": {
+        "0": 360.62994384765625,
+        "1": 234
+      },
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2634
+        },
+        {
+          "name": "face_areas",
+          "type": "FACE_AREAS",
+          "link": 2730
+        },
+        {
+          "name": "face0",
+          "type": "IMAGE",
+          "link": 2635
+        },
+        {
+          "name": "face1",
+          "type": "IMAGE",
+          "link": 2636
+        },
+        {
+          "name": "face2",
+          "type": "IMAGE",
+          "link": 2676
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            2654
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MultisubjectFaceSwapNode"
+      },
+      "widgets_values": [
+        "inswapper_128.onnx",
+        "retinaface_resnet50",
+        "codeformer-v0.1.0.pth",
+        1,
+        0.8
+      ]
+    },
+    {
+      "id": 1060,
+      "type": "KSampler",
+      "pos": [
+        1050,
+        1730
+      ],
+      "size": {
+        "0": 280,
+        "1": 262
+      },
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 2724
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 2584
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 2587
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 2700
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            2457
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        386688743044372,
+        "randomize",
+        8,
+        6,
+        "euler",
+        "sgm_uniform",
+        1
+      ]
+    },
+    {
+      "id": 1061,
+      "type": "VAEDecode",
+      "pos": [
+        1360,
+        1740
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 2457
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 2458
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            2634
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 1086,
+      "type": "OpenposePreprocessor",
+      "pos": [
+        155,
+        1008
+      ],
+      "size": {
+        "0": 315,
+        "1": 150
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2678
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            2598,
+            2615
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "POSE_KEYPOINT",
+          "type": "POSE_KEYPOINT",
+          "links": [
+            2727
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "OpenposePreprocessor"
+      },
+      "widgets_values": [
+        "disable",
+        "enable",
+        "enable",
+        512
+      ]
+    },
+    {
+      "id": 1165,
+      "type": "RegionalPromptingNode",
+      "pos": [
+        634,
+        1035
+      ],
+      "size": {
+        "0": 216.59999084472656,
+        "1": 86
+      },
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pose",
+          "type": "POSE_KEYPOINT",
+          "link": 2727
+        }
+      ],
+      "outputs": [
+        {
+          "name": "body_regions",
+          "type": "AREAS",
+          "links": [
+            2729
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "face_regions",
+          "type": "FACE_AREAS",
+          "links": [
+            2730
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "mask_regions",
+          "type": "LIST_OF_MASK",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "debug_image",
+          "type": "IMAGE",
+          "links": [
+            2728
+          ],
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RegionalPromptingNode"
+      }
+    },
+    {
+      "id": 1161,
+      "type": "RegionalAttentionProcessorNode",
+      "pos": [
+        -103,
+        1742
+      ],
+      "size": {
+        "0": 235.1999969482422,
+        "1": 246
+      },
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 2715
+        },
+        {
+          "name": "body_regions",
+          "type": "AREAS",
+          "link": 2729
+        },
+        {
+          "name": "prompt_embedding_0",
+          "type": "CONDITIONING",
+          "link": 2717
+        },
+        {
+          "name": "negative_embedding_0",
+          "type": "CONDITIONING",
+          "link": 2718
+        },
+        {
+          "name": "prompt_embedding_1",
+          "type": "CONDITIONING",
+          "link": 2720
+        },
+        {
+          "name": "negative_embedding_1",
+          "type": "CONDITIONING",
+          "link": 2721
+        },
+        {
+          "name": "prompt_embedding_2",
+          "type": "CONDITIONING",
+          "link": 2723
+        },
+        {
+          "name": "negative_embedding_2",
+          "type": "CONDITIONING",
+          "link": 2722
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            2724
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RegionalAttentionProcessorNode"
+      },
+      "widgets_values": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": 1152,
+      "type": "LoadImage",
+      "pos": [
+        -205,
+        1009
+      ],
+      "size": {
+        "0": 315,
+        "1": 314.0000305175781
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            2678
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "BFF-grey_800x800_crop_center@2x (2).jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 1156,
+      "type": "EmptyLatentImage",
+      "pos": [
+        673,
+        2077
+      ],
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            2700
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1
+      ]
+    }
+  ],
+  "links": [
+    [
+      2451,
+      1057,
+      0,
+      1058,
+      0,
+      "PHOTOMAKER"
+    ],
+    [
+      2452,
+      1059,
+      0,
+      1058,
+      1,
+      "IMAGE"
+    ],
+    [
+      2457,
+      1060,
+      0,
+      1061,
+      0,
+      "LATENT"
+    ],
+    [
+      2458,
+      1062,
+      2,
+      1061,
+      1,
+      "VAE"
+    ],
+    [
+      2461,
+      1065,
+      0,
+      1066,
+      2,
+      "CONTROL_NET"
+    ],
+    [
+      2483,
+      1072,
+      0,
+      1071,
+      2,
+      "LORA_STACK"
+    ],
+    [
+      2489,
+      1062,
+      1,
+      1071,
+      1,
+      "CLIP"
+    ],
+    [
+      2490,
+      1062,
+      0,
+      1071,
+      0,
+      "MODEL"
+    ],
+    [
+      2559,
+      1108,
+      0,
+      1109,
+      1,
+      "IMAGE"
+    ],
+    [
+      2561,
+      1057,
+      0,
+      1109,
+      0,
+      "PHOTOMAKER"
+    ],
+    [
+      2584,
+      1066,
+      0,
+      1060,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      2585,
+      1113,
+      0,
+      1066,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      2586,
+      1114,
+      0,
+      1066,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      2587,
+      1066,
+      1,
+      1060,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      2598,
+      1086,
+      0,
+      1066,
+      3,
+      "IMAGE"
+    ],
+    [
+      2615,
+      1086,
+      0,
+      1129,
+      0,
+      "IMAGE"
+    ],
+    [
+      2634,
+      1061,
+      0,
+      1137,
+      0,
+      "IMAGE"
+    ],
+    [
+      2635,
+      1059,
+      0,
+      1137,
+      2,
+      "IMAGE"
+    ],
+    [
+      2636,
+      1108,
+      0,
+      1137,
+      3,
+      "IMAGE"
+    ],
+    [
+      2654,
+      1137,
+      0,
+      1147,
+      0,
+      "IMAGE"
+    ],
+    [
+      2669,
+      1150,
+      0,
+      1151,
+      1,
+      "IMAGE"
+    ],
+    [
+      2670,
+      1062,
+      1,
+      1058,
+      2,
+      "CLIP"
+    ],
+    [
+      2672,
+      1062,
+      1,
+      1109,
+      2,
+      "CLIP"
+    ],
+    [
+      2673,
+      1062,
+      1,
+      1151,
+      2,
+      "CLIP"
+    ],
+    [
+      2676,
+      1150,
+      0,
+      1137,
+      4,
+      "IMAGE"
+    ],
+    [
+      2677,
+      1057,
+      0,
+      1151,
+      0,
+      "PHOTOMAKER"
+    ],
+    [
+      2678,
+      1152,
+      0,
+      1086,
+      0,
+      "IMAGE"
+    ],
+    [
+      2679,
+      1062,
+      1,
+      1113,
+      0,
+      "CLIP"
+    ],
+    [
+      2680,
+      1062,
+      1,
+      1114,
+      0,
+      "CLIP"
+    ],
+    [
+      2700,
+      1156,
+      0,
+      1060,
+      3,
+      "LATENT"
+    ],
+    [
+      2715,
+      1071,
+      0,
+      1161,
+      0,
+      "MODEL"
+    ],
+    [
+      2717,
+      1058,
+      0,
+      1161,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      2718,
+      1113,
+      0,
+      1161,
+      3,
+      "CONDITIONING"
+    ],
+    [
+      2720,
+      1109,
+      0,
+      1161,
+      4,
+      "CONDITIONING"
+    ],
+    [
+      2721,
+      1113,
+      0,
+      1161,
+      5,
+      "CONDITIONING"
+    ],
+    [
+      2722,
+      1113,
+      0,
+      1161,
+      7,
+      "CONDITIONING"
+    ],
+    [
+      2723,
+      1151,
+      0,
+      1161,
+      6,
+      "CONDITIONING"
+    ],
+    [
+      2724,
+      1161,
+      0,
+      1060,
+      0,
+      "MODEL"
+    ],
+    [
+      2727,
+      1086,
+      1,
+      1165,
+      0,
+      "POSE_KEYPOINT"
+    ],
+    [
+      2728,
+      1165,
+      3,
+      1130,
+      0,
+      "IMAGE"
+    ],
+    [
+      2729,
+      1165,
+      0,
+      1161,
+      1,
+      "AREAS"
+    ],
+    [
+      2730,
+      1165,
+      1,
+      1137,
+      1,
+      "FACE_AREAS"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "Prompt Basic",
+      "bounding": [
+        -1378,
+        2042,
+        677,
+        728
+      ],
+      "color": "#8A8",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Load model",
+      "bounding": [
+        -1748,
+        1397,
+        1045,
+        625
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Photomaker",
+      "bounding": [
+        -681,
+        2041,
+        814,
+        1361
+      ],
+      "color": "#b58b2a",
+      "font_size": 24,
+      "locked": false
+    }
+  ],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
