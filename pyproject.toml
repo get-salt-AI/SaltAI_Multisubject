@@ -1,5 +1,5 @@
 [project]
-name = "pr-saltai_multisubject-41849367"
+name = "saltai_multisubject"
 description = ""
 version = "1.0.0"
 license = "LICENSE"
@@ -9,6 +9,6 @@ Repository = "https://github.com/haohaocreates/PR-SaltAI_Multisubject-41849367"
 #  Used by Comfy Registry https://comfyregistry.org
 
 [tool.comfy]
-PublisherId = ""
-DisplayName = "PR-SaltAI_Multisubject-41849367"
+PublisherId = "saltai"
+DisplayName = "SaltAI_Multisubject"
 Icon = ""
